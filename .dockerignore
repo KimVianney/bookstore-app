@@ -1,0 +1,24 @@
+# Ignore common Python/Django files and directories
+*.pyc
+__pycache__
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+*.log
+
+# Ignore development and local files
+.env
+.env.*
+.vscode/
+.idea/
+*.sqlite3
+
+# Ignore version control files
+.git/
+.gitignore
+
+# Local virtual envs
+.venv/
