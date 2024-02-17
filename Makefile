@@ -13,7 +13,7 @@ migrate:
 migrations:
 	docker compose run web python manage.py makemigrations
 test:
-	docker compose run web python manage.py test $(APP))
+	docker compose run web python manage.py test $(APP)
 db:
 	docker compose exec db psql --username=$(USERNAME) --dbname=$(DBNAME)
 superuser:
