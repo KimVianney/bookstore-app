@@ -1,3 +1,6 @@
+refresh:
+	docker compose down
+	docker compose up --build
 build:
 	docker compose build
 up:
@@ -22,3 +25,7 @@ startapp:
 	docker compose exec web python manage.py startapp $(APP)
 flush:
 	docker compose exec web python manage.py flush --no-input
+lint-apply:
+	@echo "applying lint changes ..."
+	docker-compose exec app flake8 --ignore=D401,W503 --exclude migrations .
+	docker-compose exec app black --exclude='''/(migrations*)/''' .
